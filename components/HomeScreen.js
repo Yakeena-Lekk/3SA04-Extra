@@ -1,5 +1,16 @@
 import React from 'react';
-import { View, Text, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet,TouchableHighlight } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native';
+
+
+const check = ({ check, navigation }) => (
+    <TouchableHighlight onPress={() => navigation.navigate('Report', { check})}>
+        <View>
+            <Text>{check}</Text>
+        </View>
+    </TouchableHighlight>
+)
 
 export default function Home(props) {
 return (
